@@ -7,8 +7,9 @@ def main():
     eq.setB(2)
     eq.setC(1)
     rel = Resolucao()
-    print(eq.__str__())
+    
     print(rel.calcularDelta(eq))
+    print(rel.calcularRaizes(eq))
 
 
     

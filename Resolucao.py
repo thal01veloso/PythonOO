@@ -1,6 +1,14 @@
 from SegundoGrau import *
+from math import sqrt
 class Resolucao():
+    __delta = float()
+    __x1 = float()
+    __x2 = float()
     def calcularDelta(self,EquacaoSegundoGrau):
         
-        delta = (EquacaoSegundoGrau.getB()**2)-4*EquacaoSegundoGrau.getA()*EquacaoSegundoGrau.getC()
-        return delta
+        self.__delta = (EquacaoSegundoGrau.getB()**2)-4*EquacaoSegundoGrau.getA()*EquacaoSegundoGrau.getC()
+        return "Delta = {}".format(self.__delta)
+    def calcularRaizes(self, EquacaoSegundoGrau):
+        self.__x1 = (- EquacaoSegundoGrau.getB()+sqrt(self.__delta))/2*EquacaoSegundoGrau.getA()
+        self.__x2 = (- EquacaoSegundoGrau.getB()-sqrt(self.__delta))/2*EquacaoSegundoGrau.getA()
+        return "Raizes da equação são: {} {}".format(self.__x1,self.__x2)
