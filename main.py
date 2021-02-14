@@ -10,6 +10,7 @@ def main():
     
     print(rel.calcularDelta(eq))
     print(rel.calcularRaizes(eq))
+    print(rel.analiseDelta(eq))
 
 
     
