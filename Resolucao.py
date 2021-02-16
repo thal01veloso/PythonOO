@@ -1,9 +1,13 @@
 from SegundoGrau import *
 from math import sqrt
+import numpy as np
+import matplotlib.pyplot as plt
 class Resolucao():
     __delta = float()
     __x1 = float()
     __x2 = float()
+    __eixo_x=float()
+    __y=float()
     def calcularDelta(self,EquacaoSegundoGrau):
         
         self.__delta = (EquacaoSegundoGrau.getB()**2)-4*EquacaoSegundoGrau.getA()*EquacaoSegundoGrau.getC()
@@ -19,3 +23,8 @@ class Resolucao():
             return "As raizes são Complexas"
         else:
             return "Possui duas raizes distintas"
+    def gerarGrafico(self, EquacaoSegundoGrau):
+        self.__eixo_x=np.linspace(-1,1,100)
+        self.__y=(EquacaoSegundoGrau.getA()*(self.__eixo_x)**2)+EquacaoSegundoGrau.getB()*self.__eixo_x+EquacaoSegundoGrau.getC()
+        p=plt.plot(self.__eixo_x,self.__y)
+        return plt.show(p)
